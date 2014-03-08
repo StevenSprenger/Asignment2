@@ -1,0 +1,36 @@
+Hey. I've been working on the project and cam upon this tutorial on how to use the google maps api on w3schools.com. Here's the link: http://www.w3schools.com/googleapi/default.asp
+
+I've so far done this. If you could verify that it runs on your machine and that the map size adjusts to your screen size that'd be great!
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather Map app</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBgYcZoiUzO5uYoAMEDHLCnoJfMmcB2Ul4&sensor=false">
+        </script>
+
+        <script>
+            function initialize()
+            {
+                var mapProp = {
+                    center: new google.maps.LatLng(51.508742, -0.120850),
+                    zoom: 5,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                var map = new google.maps.Map(document.getElementById("googleMap")
+                        , mapProp);
+                        
+                document.getElementById("googleMap").style.width = window.innerWidth-15+"px";
+                document.getElementById("googleMap").style.height = window.innerHeight-20+"px";
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+    </head>
+    <body>
+        <div id="googleMap"></div>
+    </body>
+</html>
